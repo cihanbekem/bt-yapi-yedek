@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import btLogoBuyukBeyaz from '../assets/bt_logo_buyuk_beyaz.png';
 
 const About = () => {
   return (
@@ -55,37 +56,37 @@ const About = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 text-center">
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 gap-12 lg:gap-24 min-h-[60vh]">
+        {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="space-y-8 w-full flex flex-col items-center justify-center"
+          className="flex justify-center items-center w-full lg:w-auto mb-8 lg:mb-0"
         >
-          {/* Başlık */}
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent"
-          >
+          <img
+            src={btLogoBuyukBeyaz}
+            alt="BT Yapı İnşaat Logo"
+            className="w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 object-contain drop-shadow-xl"
+          />
+        </motion.div>
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex flex-col justify-center items-center lg:items-start w-full max-w-2xl"
+        >
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-400 via-white to-gray-300 bg-clip-text text-transparent mb-6 text-center lg:text-left">
             Hakkımızda
-          </motion.h2>
-
-          {/* Alt başlık ve içerik */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
-          >
+          </h2>
+          <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed text-center lg:text-left">
             BT Yapı İnşaat olarak, yenilikçi ve sürdürülebilir çözümlerle yaşam alanlarını geleceğe taşıyoruz. 
             Her projede estetik, fonksiyonellik ve güvenliği bir arada sunmayı hedefliyoruz. 
             <span className="block mt-4 text-base text-gray-300">Vizyonumuz; sektörde öncü, güvenilir ve yaratıcı projelere imza atmak.<br/>Misyonumuz; müşteri memnuniyetini ve kaliteyi en üst düzeyde tutmak.</span>
-          </motion.p>
+          </p>
         </motion.div>
       </div>
     </section>
