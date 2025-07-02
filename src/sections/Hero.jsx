@@ -1,5 +1,19 @@
 import { motion } from 'framer-motion';
 import { ChevronDownIcon, PlayIcon } from '@heroicons/react/24/outline';
+import btLogoBuyukBeyaz from '../assets/bt_logo_buyuk_beyaz.png';
+
+const MouseIcon = () => (
+  <div className="w-10 h-14 flex items-center justify-center">
+    <div className="w-7 h-12 rounded-full border-2 border-gray-400 flex items-start justify-center relative bg-black/30">
+      <motion.div
+        className="w-1 h-3 rounded-full bg-gray-300 absolute left-1/2 -translate-x-1/2"
+        initial={{ y: 6, opacity: 1 }}
+        animate={{ y: 18, opacity: [1, 0.5, 1] }}
+        transition={{ duration: 1.2, repeat: Infinity }}
+      />
+    </div>
+  </div>
+);
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -71,16 +85,15 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8 w-full flex flex-col items-center justify-center"
         >
-          {/* Badge */}
-          <motion.div
+          {/* Logo - replaces badge */}
+          <motion.img
+            src={btLogoBuyukBeyaz}
+            alt="BT Yapı İnşaat Logo"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center px-4 py-2 bg-[#444]/70 backdrop-blur-md rounded-full border border-blue-400/30"
-          >
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-            <span className="text-gray-100 text-sm font-medium">5+ Yıllık Deneyim</span>
-          </motion.div>
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl mb-2"
+          />
 
           {/* Main Heading */}
           <motion.h1
@@ -179,16 +192,10 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        onClick={scrollToNext}
       >
-        <motion.button
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          onClick={scrollToNext}
-          className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-        >
-          <ChevronDownIcon className="w-8 h-8" />
-        </motion.button>
+        <MouseIcon />
       </motion.div>
     </section>
   );

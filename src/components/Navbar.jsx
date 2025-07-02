@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
+import btLogoKucukBeyaz from '../assets/bt_logo_kucuk_beyaz.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,19 +29,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-white-500 to-black-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">BT</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl lg:text-2xl font-bold text-white/90">
-                BT Yapı İnşaat
-              </h1>
-            </div>
-          </motion.div>
+          <div className="flex items-center">
+            <img
+              src={btLogoKucukBeyaz}
+              alt="BT Yapı İnşaat Logo"
+              className="w-80 h-80 object-contain"
+            />
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
